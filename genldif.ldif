@@ -1,0 +1,121 @@
+dn: dc=corp, dc=good, dc=co
+dc: corp
+o: GoodCo
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+
+dn: ou=people, dc=corp, dc=good, dc=co
+objectClass: organizationalUnit
+ou: people
+
+dn: cn=Jane Brown, ou=people, dc=corp, dc=good, dc=co
+cn: Jane Brown
+mail: jane.brown@good.co
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+ou: Risk and Compliance
+sn: Brown
+userid: 1a922d9f-c080-486d-a312-e3fe540c7e3d
+
+dn: cn=Benito Moore, ou=people, dc=corp, dc=good, dc=co
+cn: Benito Moore
+mail: benito.moore@good.co
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+ou: Sales
+sn: Moore
+userid: 7299e588-3b7f-41dc-8c7b-dd38b0f11bb4
+
+dn: cn=Kimberly Owens, ou=people, dc=corp, dc=good, dc=co
+cn: Kimberly Owens
+mail: kimberly.owens@good.co
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+ou: Risk and Compliance
+sn: Owens
+userid: 54d8ac9a-bf43-4ede-95c3-90f82dbc3c68
+
+dn: cn=Stephen Ewalt, ou=people, dc=corp, dc=good, dc=co
+cn: Stephen Ewalt
+mail: stephen.ewalt@good.co
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+ou: Accounting
+sn: Ewalt
+userid: 5f540cb1-17f7-403a-9e23-8b414a6bfeda
+
+dn: cn=Lois Fiscus, ou=people, dc=corp, dc=good, dc=co
+cn: Lois Fiscus
+mail: lois.fiscus@good.co
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+ou: Accounting
+sn: Fiscus
+userid: e59ea93c-2a65-45bf-b8ec-2ccfc68a4526
+
+dn: cn=Roxie Geiger, ou=people, dc=corp, dc=good, dc=co
+cn: Roxie Geiger
+mail: roxie.geiger@good.co
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+ou: Risk and Compliance
+sn: Geiger
+userid: d345841d-1c8d-4fee-a3da-378c6e38ee50
+
+dn: cn=Helen Davis, ou=people, dc=corp, dc=good, dc=co
+cn: Helen Davis
+mail: helen.davis@good.co
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+ou: Sales
+sn: Davis
+userid: 8ee7e9e0-b6ff-49a9-961a-f2f929b38e09
+
+dn: cn=Leslie Burnett, ou=people, dc=corp, dc=good, dc=co
+cn: Leslie Burnett
+mail: leslie.burnett@good.co
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+ou: Technology
+sn: Burnett
+userid: 2c9b5ac2-a1ce-4b8f-8cb4-11f52c8584ed
+
+dn: cn=Timothy Albanese, ou=people, dc=corp, dc=good, dc=co
+cn: Timothy Albanese
+mail: timothy.albanese@good.co
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+ou: Sales
+sn: Albanese
+userid: 3487b806-9c3d-48a5-bcf8-f20acce312ae
+
+dn: cn=Lindsay Sanchez, ou=people, dc=corp, dc=good, dc=co
+cn: Lindsay Sanchez
+mail: lindsay.sanchez@good.co
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+ou: Accounting
+sn: Sanchez
+userid: 15db47fe-a071-4797-9858-8d3e9c3b4d09
+
