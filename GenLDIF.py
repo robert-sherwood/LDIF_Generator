@@ -57,11 +57,12 @@ for entry in range(0, numberOfEntries):
 
     entry = {
         "objectClass": [b"top", b"person", b"organizationalPerson", b"inetOrgPerson"],
-        "cn": [commonName.encode()],
-        "sn": [surName.encode()],
+        "commonName": [commonName.encode()],
+        "givenName": [givenName.encode()],
+        "surName": [surName.encode()],
         "mail": [email.encode()],
-        "userid": [str(userId).encode()],
-        "ou": [str(department).encode()]
+        "userId": [str(userId).encode()],
+        "organizationalUnitName": [str(department).encode()]
     }
     dn = f"cn={commonName}, ou=people, {rootDn}"
     ld_writer.unparse(dn, entry)
