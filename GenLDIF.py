@@ -20,12 +20,9 @@ companyStructure: List[str] = ['Technology',
                                'Business Operations']
 
 # Number of user entries to create
-numberOfEntries = 10
+numberOfEntries = 150
 
 # Global Variables
-
-# List to hold all entries generated before writing to file.
-entryList = []
 
 # Create the LDIFWriter to produce the ldif output
 ld_writer = ldif.LDIFWriter(sys.stdout)
