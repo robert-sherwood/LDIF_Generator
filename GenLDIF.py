@@ -1,3 +1,14 @@
+# Simple script to generate random users for test or development purposes. This utility will export the generated
+# users to STDOUT. The output can be redirected to a file.
+# It is standard LDIF which can be imported to any LDAP Directory
+#
+# Currently, this script requires the following modules to be installed:
+# names==0.3.0
+# pyasn1==0.4.7
+# pyasn1-modules==0.2.7
+# python-ldap==3.2.0
+# six==1.12.0
+
 from typing import List
 
 import ldif
@@ -39,7 +50,7 @@ ld_writer.unparse(dn, entry)
 # Create 'people' OU to hold user information
 dn = "ou=people, " + rootDn
 entry = {
-    "objectClass": [b"organizationalUnit"],
+    "objectClass": [b"top", b"organizationalUnit"],
     "ou": [b"people"],
 }
 ld_writer.unparse(dn, entry)
