@@ -69,7 +69,8 @@ for entry in range(0, numberOfEntries):
     email = f"{givenName.lower()}.{surName.lower()}@good.co"
     userId = uuid.uuid4()
     department = random.choice(companyStructure)
-    passhash = b64encode(("{SHA}" + sha1(password.encode()).hexdigest()).encode())
+    # This is not working. There may not be a way to provide a hashed password via ldif
+    # passhash = b64encode(("{SHA}" + sha1(password.encode()).hexdigest()).encode())
 
     entry = {
         "objectClass": [b"top", b"person", b"organizationalPerson", b"inetOrgPerson"],
