@@ -11,6 +11,7 @@
 
 from typing import List
 from hashlib import sha1
+from base64 import b64encode
 
 import ldif
 import sys
@@ -59,6 +60,8 @@ entry = {
 }
 ld_writer.unparse(dn, entry)
 
+# print(b64encode(("{SHA}" + sha1(password.encode()).hexdigest()).encode()))
+
 for entry in range(0, numberOfEntries):
     givenName = names.get_first_name()
     surName = names.get_last_name()
@@ -66,7 +69,7 @@ for entry in range(0, numberOfEntries):
     email = f"{givenName.lower()}.{surName.lower()}@good.co"
     userId = uuid.uuid4()
     department = random.choice(companyStructure)
-    passhash = "{SHA}" + sha1(password.encode()).hexdigest()
+    passhash = b64encode(("{SHA}" + sha1(password.encode()).hexdigest()).encode())
 
     entry = {
         "objectClass": [b"top", b"person", b"organizationalPerson", b"inetOrgPerson"],
@@ -76,7 +79,7 @@ for entry in range(0, numberOfEntries):
         "mail": [email.encode()],
         "userId": [str(userId).encode()],
         "organizationalUnitName": [str(department).encode()],
-        "userPassword": [passhash.encode()]
+        "userPassword": [password.encode()]
     }
     dn = f"cn={commonName}, ou=people, {rootDn}"
     ld_writer.unparse(dn, entry)
