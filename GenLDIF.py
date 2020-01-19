@@ -10,6 +10,7 @@
 # six==1.12.0
 
 from typing import List
+from hashlib import sha1
 
 import ldif
 import sys
@@ -32,6 +33,9 @@ companyStructure: List[str] = ['Technology',
 
 # Number of user entries to create
 numberOfEntries = 150
+
+# Password string - all users are assigned the same initial password
+password = "password"
 
 # Global Variables
 
@@ -62,6 +66,7 @@ for entry in range(0, numberOfEntries):
     email = f"{givenName.lower()}.{surName.lower()}@good.co"
     userId = uuid.uuid4()
     department = random.choice(companyStructure)
+    passhash = "{SHA}" + sha1(password.encode()).hexdigest()
 
     entry = {
         "objectClass": [b"top", b"person", b"organizationalPerson", b"inetOrgPerson"],
@@ -70,7 +75,8 @@ for entry in range(0, numberOfEntries):
         "surName": [surName.encode()],
         "mail": [email.encode()],
         "userId": [str(userId).encode()],
-        "organizationalUnitName": [str(department).encode()]
+        "organizationalUnitName": [str(department).encode()],
+        "userPassword": [passhash.encode()]
     }
     dn = f"cn={commonName}, ou=people, {rootDn}"
     ld_writer.unparse(dn, entry)
